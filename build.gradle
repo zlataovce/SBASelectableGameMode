@@ -40,12 +40,10 @@ dependencies {
     compileOnly 'org.screamingsandals.bedwars:BedWars-API:0.2.18'
     compileOnly 'org.screamingsandals.bedwars:BedWars:0.2.18'
     compileOnly group: 'org.spongepowered', name: 'configurate-yaml', version: '4.1.1'
-    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.32'
 }
 
 // Relocating a Package
 shadowJar {
     relocate 'co.aikar.commands', 'me.zlataovce.sbagamemode.lib.aikar.acf'
     relocate 'co.aikar.locales', 'me.zlataovce.sbagamemode.lib.aikar.locales'
-    relocate 'org.slf4j', 'me.zlataovce.sbagamemode.lib.slf4j'
 }

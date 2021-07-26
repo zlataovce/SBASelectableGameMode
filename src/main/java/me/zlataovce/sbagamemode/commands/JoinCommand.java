@@ -14,7 +14,8 @@ import java.util.concurrent.ThreadLocalRandom;
 
 @CommandAlias("sbajoin|joinbw")
 public class JoinCommand extends BaseCommand {
-    @Dependency private Main plugin;
+    @Dependency
+    private Main plugin;
 
     @PreCommand
     public boolean onPreCommand(CommandSender sender, String[] args) {

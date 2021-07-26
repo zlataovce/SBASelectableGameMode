@@ -3,7 +3,6 @@ package me.zlataovce.sbagamemode.misc;
 import io.github.pronze.sba.AddonAPI;
 import io.github.pronze.sba.config.SBAConfig;
 import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
 import org.screamingsandals.bedwars.api.BedwarsAPI;
 import org.screamingsandals.bedwars.api.game.GameStatus;
 
@@ -12,10 +11,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Slf4j
 public class SBAUtil {
-    @Getter private final AddonAPI sbaAPI;
-    @Getter private final BedwarsAPI bedwarsAPI;
+    @Getter
+    private final AddonAPI sbaAPI;
+    @Getter
+    private final BedwarsAPI bedwarsAPI;
 
     public SBAUtil() {
         this.sbaAPI = AddonAPI.getInstance();

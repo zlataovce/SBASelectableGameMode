@@ -7,7 +7,8 @@ import me.zlataovce.sbagamemode.misc.SBAUtil;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
-    @Getter private SBAUtil sbaUtil;
+    @Getter
+    private SBAUtil sbaUtil;
 
     @Override
     public void onEnable() {
