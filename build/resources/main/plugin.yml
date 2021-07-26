@@ -1,0 +1,7 @@
+name: SBASelectableGameMode
+version: '1.0'
+author: zlataovce
+main: me.zlataovce.sbagamemode.Main
+description: A plugin which adds commands for joining arenas by their gamemode.
+api-version: 1.13
+depend: [SBA, BedWars]

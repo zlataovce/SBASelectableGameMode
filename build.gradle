@@ -1,0 +1,51 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '7.0.0'
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+    maven { url = "https://repo.aikar.co/content/groups/aikar/" }
+    maven { url = "https://hub.spigotmc.org/nexus/content/groups/public/" }
+    maven {
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+        content {
+            includeGroup 'org.bukkit'
+            includeGroup 'org.spigotmc'
+        }
+    }
+    maven { url = 'https://oss.sonatype.org/content/repositories/snapshots' }
+    maven { url = 'https://oss.sonatype.org/content/repositories/central' }
+    maven { url = 'https://oss.sonatype.org/content/repositories/central' }
+    maven {
+         url = 'https://repo.screamingsandals.org/public'
+    }
+    // mavenLocal()
+}
+
+group 'me.zlataovce'
+version '1.0-SNAPSHOT'
+
+dependencies {
+    compileOnly 'org.jetbrains:annotations:16.0.2'
+
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+    compileOnly 'org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT' // The Spigot API with no shadowing. Requires the OSS repo.
+    implementation group: 'co.aikar', name: 'acf-paper', version: '0.5.0-SNAPSHOT'
+
+    compileOnly 'io.pronze.hypixelify:SBA-API:1.5.5'
+    compileOnly 'io.pronze.hypixelify:SBA:1.5.5'
+    compileOnly 'org.screamingsandals.bedwars:BedWars-API:0.2.18'
+    compileOnly 'org.screamingsandals.bedwars:BedWars:0.2.18'
+    compileOnly group: 'org.spongepowered', name: 'configurate-yaml', version: '4.1.1'
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.32'
+}
+
+// Relocating a Package
+shadowJar {
+    relocate 'co.aikar.commands', 'me.zlataovce.sbagamemode.lib.aikar.acf'
+    relocate 'co.aikar.locales', 'me.zlataovce.sbagamemode.lib.aikar.locales'
+    relocate 'org.slf4j', 'me.zlataovce.sbagamemode.lib.slf4j'
+}
